@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>state practice 1</title>
+    <base href="/" />
+</head>
+<body>
+    <div id="root"></div>
+    <span>---------------------------------------</span>
+    <div>
+        <h1>Super Converter HTML</h1>
+        <label for= "minutes">Minutes </label>
+        <input id= "minutes" placeholder= "Minutes" type= "number"/>
+        <br/>
+        <label for= "hours">Hours </label>
+        <input id= "hours" placeholder= "Hours" type= "number"/>
+
+    </div>
+</body>
+<script crossorigin src="//unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="//unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+<script type = "text/babel">
+    function App(){
+        const [minutes, setMinutes]= React.useState(0);
+        const onChange= (event) => {
+            setMinutes(event.target.value);
+        }
+        const reset= ()=>{
+            setMinutes(0);
+        }
+        return(
+            <div>
+                <div>
+                    <h1 className= "hi">Super Converter ReactJS</h1>
+                    <label htmlFor= "minutes">Minutes </label>
+                    <input 
+                        id= "minutes" 
+                        placeholder= "Minutes" 
+                        type= "number"
+                        value= {minutes}
+                        onChange= {onChange}/>
+                    <br/>
+                    <h4>You want to convert {minutes}</h4>
+                
+                </div>
+                
+                <div>
+                    <h4>You want to convert to {minutes/60} hours</h4>
+                    <label htmlFor= "hours">Hours </label>
+                    <input 
+                        id= "hours"
+                        placeholder= "Hours" 
+                        type= "number"
+                        value= {minutes/60}
+                        disabled/>
+                </div>
+                <button onClick= {reset}>RESET</button>
+            </div>
+        );
+    }
+    // render
+    ReactDOM.render(<App/>, root);
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script crossorigin src="//unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="//unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+<script type="text/babel">
+    const root= document.getElementById("root");
+    // function Btn(props)로 받으면 {props.title} 로 접근.
+    // function Btn({title})로 받으면 {title} 바로 접근 가능
+    function Btn({title, bg}) {
+        return <button
+        style= {{
+            backgroundColor: bg,
+            color: "white",
+            padding: "10px 20px",
+            borderRadius: 10,
+            border: 0
+        }}>{title}</button>
+    }
+
+    function App() {
+        return (
+            <div>
+                <Btn title= "Save" bg= "tomato"/>
+                <Btn title= "Continue" bg= "skyblue"/>
+            </div>
+        );
+    }
+    ReactDOM.render(<App/>, root);
+</script>
+</html>

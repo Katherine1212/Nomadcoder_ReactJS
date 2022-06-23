@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>state practice 2</title>
+    <base href="/" />
+</head>
+<body>
+    <div id="root"></div>
+    <span>---------------------------------------</span>
+    <div>
+        <h1>Super Converter HTML</h1>
+        <label for= "minutes">Minutes </label>
+        <input id= "minutes" placeholder= "Minutes" type= "number"/>
+        <br/>
+        <label for= "hours">Hours </label>
+        <input id= "hours" placeholder= "Hours" type= "number"/>
+
+    </div>
+</body>
+<script crossorigin src="//unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="//unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+<script type = "text/babel">
+    
+    function App(){
+        const [amount, setAmount]= React.useState(0);
+        const [flipped, setFlipped]= React.useState(false);
+
+        const onChange= (event) => {
+            setAmount(event.target.value);
+        }
+        const reset= () => setAmount(0);
+        const onFlip= () => {
+            reset();
+            setFlipped((current)=> !current);
+        }
+        return(
+            <div>
+                <h1 className= "hi">Super Converter ReactJS</h1>
+                <div>
+                    <label htmlFor= "minutes">Minutes </label>
+                    <input 
+                        id= "minutes" 
+                        placeholder= "Minutes" 
+                        type= "number"
+                        value= {flipped? amount * 60: amount}
+                        onChange= {onChange}
+                        disabled= {flipped}/>
+                    <br/>
+                    <h4>You want to convert {flipped? amount * 60: amount}</h4>
+                
+                </div>
+                
+                <div>
+                    <h4>You want to convert to {flipped? amount: Math.round(amount / 60)} hours</h4>
+                    <label htmlFor= "hours">Hours </label>
+                    <input 
+                        id= "hours"
+                        placeholder= "Hours" 
+                        type= "number"
+                        value= {flipped? amount: Math.round(amount / 60)}
+                        onChange= {onChange}
+                        disabled= {!flipped}/>
+                </div>
+                <button onClick= {reset}>RESET</button>
+                <em> </em>
+                <button onClick= {onFlip}>FLIP</button>
+
+            </div>
+        );
+    }
+    // render
+    ReactDOM.render(<App/>, root);
+</script>
+</html>

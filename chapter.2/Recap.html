@@ -10,21 +10,8 @@
     <div id="root1"></div>
     <div id="root1_1"> <h3>Hello I am a HTML title</h3></div>
     <br/>
-    <span>TOTAL clicks: 0</span>
-    <button id= "btn"> click me HTML</button>
+    <button id= "btn" style="background-color: skyblue"> click me HTML</button>
 </body>
-<!-- VanilaJS -->
-<script>
-    let counter = 0;
-    const button= document.getElementById("btn");
-    const span_1= document.querySelector("span");
-    function handleClick() {
-        counter= counter +1;
-        span_1.innerText= `TOTAL clicks: ${counter}`;
-    }
-    button.addEventListener("click", handleClick);
-</script>
-<!-- ReactJS -->
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script>

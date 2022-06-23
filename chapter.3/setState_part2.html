@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setState_2</title>
+    <base href="/" />
+</head>
+<body>
+    <div id="root"></div>
+    <span>---------------------------------------</span>
+    <h3>TOTAL clicks: 0</h3>
+    <button id= "btn"> click me HTML</button>
+</body>
+<!-- VanilaJS -->
+<script>
+    let counter_html = 0;
+    const button= document.getElementById("btn");
+    const h3= document.querySelector("h3");
+    function handleClick() {
+        counter_html= counter_html +1;
+        h3.innerText= `TOTAL clicks: ${counter_html}`;
+    }
+    button.addEventListener("click", handleClick);
+</script>
+<!-- ReactJS -->
+<script crossorigin src="//unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="//unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+<script type = "text/babel">
+    /*
+        let counter= 0;
+        function counter() {
+            counter+= 1;
+        }
+        ===
+        const data= React.useState(0);
+        
+    */
+    // automatically do re-render the conpornant
+    function App(){
+        // data의 형태는 [data, function]
+        const data= React.useState(0);
+        const [counter, setCounter]= data;
+        const onCLick= () =>{
+            setCounter(counter + 1);
+        }
+        return(
+            <div>
+                <h3>Total clicks: {counter}</h3>
+                <button onClick= {onCLick}>Click Me ReactJS</button>    
+            </div>
+        );
+    }
+    // render
+    ReactDOM.render(<App/>, root);
+</script>
+</html>
