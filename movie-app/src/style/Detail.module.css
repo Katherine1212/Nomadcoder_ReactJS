@@ -1,0 +1,22 @@
+.text_div{
+    float: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 10px;
+}
+.img_div{
+    float: left;
+    margin-right: 10px;
+}
+.btn{
+    border-radius: 7px;
+    width: 80px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid aliceblue;
+    margin-bottom: 10px;
+}
+.a_href{
+    text-decoration: none;
+    color: slateblue;
+}

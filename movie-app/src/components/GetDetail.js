@@ -1,25 +1,27 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import styled from '../style/Detail.css';
+import styled from '../style/Detail.module.css';
 
 const GetDetail = ({ coverImg, title, year, runtime, rating, summary, genres }) => {
     return (
         <div>
-            <span>
-                <img src={coverImg} />
-            </span>
-            <span className={styled.text_span}>
-                <h2>{title} Release: {year}</h2>
-                <h3>runtime: {runtime} hours</h3>
-                <h3>rating: {rating} per 10.0</h3>
-                <p>{summary}</p>
-                <ul>
-                    {genres.map((g) => (
-                        <li key={g}>{g}</li>
-                    ))}
-                </ul>
-                <button ><Link to="/">Go Back</Link></button>
-            </span>
+            <button className={styled.btn}><Link to="/" className={styled.a_href}>Go Back</Link></button>
+            <div>
+                <div className={styled.img_div}>
+                    <img src={coverImg} />
+                </div>
+                <div className={styled.text_div}>
+                    <h2>{title} ({year})</h2>
+                    <h3>Runtime: {runtime} hours</h3>
+                    <h3>Rating: {rating} per 10.0</h3>
+                    <p>{summary}</p>
+                    <ul>
+                        {genres.map((g) => (
+                            <li key={g}>{g}</li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
         </div>
     );
 }

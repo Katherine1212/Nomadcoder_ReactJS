@@ -19,7 +19,7 @@ const Detail = () => {
     // <GetDetail coverImg={movie.large_cover_image} title={movie.title} year={movie.year} runtime={movie.runtime} rating={movie.rating} summary={movie.summary} genres={movie.genres} />
     return (
         <div>
-            {loading ? <h1>Detail</h1> : <div>
+            {loading ? <h1>Loading...</h1> : <div>
                 {<GetDetail coverImg={details.large_cover_image} title={details.title} year={details.year} runtime={details.runtime} rating={details.rating} summary={details.summary} genres={details.genres} />}</div>}
         </div>
     );
