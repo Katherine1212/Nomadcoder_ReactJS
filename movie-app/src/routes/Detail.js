@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Loadingbar from '../components/Loading';
+import Header from '../components/Header';
 import GetDetail from '../components/GetDetail';
 const Detail = () => {
     const { id } = useParams();
@@ -19,8 +21,9 @@ const Detail = () => {
     // <GetDetail coverImg={movie.large_cover_image} title={movie.title} year={movie.year} runtime={movie.runtime} rating={movie.rating} summary={movie.summary} genres={movie.genres} />
     return (
         <div>
-            {loading ? <h1>Loading...</h1> : <div>
-                {<GetDetail coverImg={details.large_cover_image} title={details.title} year={details.year} runtime={details.runtime} rating={details.rating} summary={details.summary} genres={details.genres} />}</div>}
+            <Header />
+            {loading ? <Loadingbar /> : <div>
+                {<GetDetail coverImg={details.large_cover_image} title={details.title} year={details.year} runtime={details.runtime} rating={details.rating} summary={details.description_full} genres={details.genres} />}</div>}
         </div>
     );
 }

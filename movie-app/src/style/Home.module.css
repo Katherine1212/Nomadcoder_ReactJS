@@ -1,19 +1,28 @@
-.wrapper{
-    max-width: 64rem;
-    padding: 0px .625rem 2.5rem;
-    box-sizing: border-box;
-    float: left;
+body{
+    background-color: #eff3f7;
 }
 
 .container{
+    position: relative;
     overflow: hidden;
 }
 
+.wrapper{
+    margin: 0 auto;
+    max-width: 1024px;
+    padding: 150px;
+}
+
 .ul{
-    width: 50%;
-    padding: 0px .625rem 2.5rem;
+    overflow: hidden;
+    list-style: none;
+}
+
+.li{
     box-sizing: border-box;
     float: left;
+    padding: 0 10px 40px;
+    width: 30%;
 }
 
 .li:nth-child(3n+1){
@@ -21,8 +30,6 @@
 }
 
 .title{
-    font-size: 1.25rem;
-    font-weight: bold;
     height: 1.625rem;
     overflow: hidden;
     text-overflow: ellipsis;

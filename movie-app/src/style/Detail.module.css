@@ -1,7 +1,15 @@
+.container{
+    position: relative;
+}
+.wrapper{
+    text-align: center;
+}
 .text_div{
     float: left;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 10px;
+    word-break: break-all;
+    max-width: 65%;
 }
 .img_div{
     float: left;
@@ -15,8 +23,22 @@
     font-weight: bold;
     border: 1px solid aliceblue;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 .a_href{
     text-decoration: none;
     color: slateblue;
+}
+.ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    font-style: italic;
+    color: gray;
+}
+
+.contents{
+    text-align: left;
+    margin-left: 35px;
+    word-break: break-all;
 }

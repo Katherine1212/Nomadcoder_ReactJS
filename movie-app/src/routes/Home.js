@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
+import Loadingbar from '../components/Loading';
 import Movie from '../components/Movie';
+import Header from '../components/Header';
 import styled from '../style/Home.module.css';
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -31,16 +33,20 @@ const Home = () => {
       */
 
   return (
-    <div className={styled.wrapper}>
-      {loading ? <h1>Loading...</h1> : (
-        <div className={styled.container}>
-          <ul className={styled.ul}>
-            {movies.map((movie) => (<li className={styled.li} key={movie.id}>
-              <Movie id={movie.id} coverImg={movie.medium_cover_image} title={movie.title} summary={movie.summary} genres={movie.genres} /></li>
-            ))}
-          </ul>
-        </div>
-      )}
+    <div className={styled.container}>
+      <Header />
+      {loading ? <Loadingbar /> :
+        (
+          <div className={styled.wrapper}>
+            <ul className={styled.ul}>
+              {movies.map((movie) => (<li className={styled.li} key={movie.id}>
+                <Movie id={movie.id} coverImg={movie.medium_cover_image} title={movie.title} summary={movie.summary} genres={movie.genres} /></li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+
 import styled from '../style/Movie.module.css';
 const Movie = ({ id, coverImg, title, summary, genres }) => {
     return (
@@ -9,9 +10,8 @@ const Movie = ({ id, coverImg, title, summary, genres }) => {
                     <img src={coverImg} />
                 </div>
                 <div className={styled.contents}>
-                    <h2 className={styled.title}>{title}</h2>
+                    <strong className={styled.title}>{title}</strong>
                 </div>
-                <div className={styled.btn}>show more info ➡️</div>
             </Link>
         </div>
     );
