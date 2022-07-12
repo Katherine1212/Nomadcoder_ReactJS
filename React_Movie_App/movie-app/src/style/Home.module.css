@@ -28,10 +28,3 @@ body{
 .li:nth-child(3n+1){
     clear: both;
 }
-
-.title{
-    height: 1.625rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
