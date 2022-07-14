@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { View, StyleSheet, Text, ScrollView, Dimensions, ActivityIndicator, ImageBackground, Image } from 'react-native';
 import * as Location from 'expo-location';
-import { API_KEY, URL } from './properties.json';
+import { API_KEY, URL } from './config.json';
 import { Fontisto } from '@expo/vector-icons';
 
 const Screen_width = Dimensions.get("window").width;
